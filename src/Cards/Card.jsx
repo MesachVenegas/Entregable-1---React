@@ -23,10 +23,10 @@ const Card = () => {
     return (
         <div className='App'>
             <div className="card" >
-                <h2 className='card__title'>{object.author}</h2>
-                <span className='quote__tile ' id='tile-1'>"</span>
-                <p className='card__quote'>{`${object.quote}`}</p>
-                <span className='quote__tile' id='tile-2'>"</span>
+                <h2 className='card__title' style={{color: color}}>{object.author}</h2>
+                <span className='quote__tile ' id='tile-1' style={{color: color}}>"</span>
+                <p className='card__quote' style={{color: color}}>{`${object.quote}`}</p>
+                <span className='quote__tile' id='tile-2' style={{color: color}}>"</span>
             </div>
             <button className='btn' onClick={nextQuote} style={{backgroundColor: colorBtn}}>Change</button>
         </div>
