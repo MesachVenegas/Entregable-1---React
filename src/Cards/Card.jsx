@@ -6,16 +6,13 @@ import './Card.css'
 const Card = () => {
     const [quoteIndex, setQuoteIndex] = useState(Math.floor(Math.random() * quotes.length))
     const [bgColor, setBgColor] = useState(Math.floor(Math.random() * colors.length))
-    const [btnColor, setBtnColor] = useState(Math.floor(Math.random() * quotes.length))
 
     const nextQuote = () => {
         setQuoteIndex(Math.floor(Math.random() * quotes.length))
         setBgColor(Math.floor(Math.random() * colors.length))
-        setBtnColor(Math.floor(Math.random() * colors.length))
     }
 
     let color = colors[bgColor].hex;
-    let colorBtn = colors[btnColor].hex
     let object = quotes[quoteIndex];
 
     document.body.style.backgroundColor =  color;
@@ -28,7 +25,7 @@ const Card = () => {
                 <p className='card__quote' style={{color: color}}>{`${object.quote}`}</p>
                 <span className='quote__tile' id='tile-2' style={{color: color}}>"</span>
             </div>
-            <button className='btn' onClick={nextQuote} style={{backgroundColor: colorBtn}}>Change</button>
+            <button className='btn' onClick={nextQuote} style={{backgroundColor: color}}>Change</button>
         </div>
     );
 };
